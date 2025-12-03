@@ -9,10 +9,13 @@ print("========Multiplication table generator========")
 while True:
 
 #Ask for th user in put to be mutiply with.
-    try:
-        num = int(input("Enter First Number: "))
-    except ValueError:
-        print("Invalid input")
+    while True:
+        try:
+            num = int(input("Enter First Number: "))
+            break
+        except ValueError:
+            print("Invalid input")
+            continue
 
 
 
@@ -23,14 +26,23 @@ while True:
         print(f"{num} x {div} = {i * num}")
 
     
-    try:
-        status = input("Would you like to try again? y/n: ")
 
-        if status == "y" or status == "Y":
-            continue
-        elif status == "n" or status == "N":
+    while True:
+        
+        status = input("Would you like to try again? y/n: ").lower()
+
+        if status == "y" :
             break
-    except ValueError:
-        print("Invalid input.")
+        elif status == "n":
+            print("Exit.")
+            break
+        else:
+            print("Invalid Input, Please enter 'n' or 'y'")
+
+    if status == "n":
+        break
+        
+        
+        
 
 

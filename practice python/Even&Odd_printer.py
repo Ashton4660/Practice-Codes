@@ -12,7 +12,7 @@ while True:
             b = int(input("Enter second number: "))
             break
         except ValueError:
-            print("Invalid input, Please try again.")
+            print("\nInvalid input, Please try again.")
             continue
     
     
@@ -24,21 +24,35 @@ while True:
 
             operation = input("Choose: ").upper()
             break
+        
         except ValueError:
-            print("Invalid Input.")
+            print("\nInvalid Input.")
             continue
 
-            if operation == "A":
-                while a != b:
-                    if a % 2 == 0:
-                        print(a)
-                        a = a + 1
+    if operation == "A":
+        while a != b + 1:
+            if a % 2 == 0:
+                print(a)
+            a = a + 1
 
-            elif operation == "B":
-                while a != b:
-                    if a % 2 != 0:
-                        print(a)
-                        a = a + 1
+    elif operation == "B":
+        while a != b + 1:
+            if a % 2 != 0:
+                print(a)
+            a = a + 1
+    
+    while True:
+        try:
+            status = input("Would you like to try again? y/n: ").lower()
+        except:
+            print("\ninvalid input.")
+            continue
+        if status == "y":
+            continue
+        elif status == "n":
+            print("\nProgram Ended.")
+            break
+    break
 
             
 
